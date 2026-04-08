@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NRA | Defend Freedom. Defend the Second Amendment.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   CSS RESET & VARIABLES
+   ═══════════════════════════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy: #0a1628;
+  --navy-light: #121f36;
+  --navy-mid: #1a2d4a;
+  --red: #c41e3a;
+  --red-dark: #9e1830;
+  --red-bright: #e63946;
+  --gold: #c5a55a;
+  --gold-light: #d4b96e;
+  --white: #ffffff;
+  --off-white: #f0f0f0;
+  --gray-light: #d1d5db;
+  --gray: #6b7280;
+  --text: #e8e8e8;
+  --font-display: 'Oswald', sans-serif;
+  --font-serif: 'Merriweather', serif;
+  --font-body: 'Open Sans', sans-serif;
+  --max-width: 1200px;
+  --section-pad: 80px 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--navy);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(10, 22, 40, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--gold);
+  transition: all 0.3s ease;
+}
+nav.scrolled { background: rgba(10, 22, 40, 0.98); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+
+.nav-inner {
+  max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+}
+
+.nav-logo {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 1.4rem; color: var(--white); letter-spacing: 3px;
+}
+.nav-logo .logo-icon {
+  width: 44px; height: 44px; background: var(--gold);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; color: var(--navy); font-weight: 700;
+}
+
+.nav-links { display: flex; gap: 6px; align-items: center; }
+.nav-links a {
+  font-family: var(--font-display); font-size: 0.82rem;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--gray-light); padding: 8px 12px; border-radius: 4px;
+  transition: all 0.25s ease; white-space: nowrap;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); background: rgba(197,165,90,0.1); }
+
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.hamburger span {
+  display: block; width: 26px; height: 2px; background: var(--gold);
+  margin: 6px 0; transition: all 0.3s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════════════════════════ */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1569407228235-9a744831a150?w=1920&q=80') center/cover no-repeat;
+}
+.hero-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,22,40,0.82) 0%, rgba(10,22,40,0.65) 40%, rgba(10,22,40,0.88) 100%);
+}
+.hero-content { position: relative; z-index: 2; padding: 120px 24px 80px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(197,165,90,0.15); border: 1px solid var(--gold);
+  padding: 10px 28px; border-radius: 50px; margin-bottom: 30px;
+  font-family: var(--font-display); font-size: 0.85rem;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--gold);
+}
+.hero h1 {
+  font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 700; line-height: 1.05; color: var(--white);
+  text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;
+}
+.hero h1 span { color: var(--gold); display: block; }
+.hero-sub {
+  font-family: var(--font-serif); font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--gray-light); max-width: 700px; margin: 0 auto 40px;
+  line-height: 1.8;
+}
+.hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-display); font-size: 0.95rem;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 16px 36px; border-radius: 4px; cursor: pointer;
+  transition: all 0.3s ease; border: 2px solid transparent;
+  font-weight: 600;
+}
+.btn-primary { background: var(--red); color: var(--white); border-color: var(--red); }
+.btn-primary:hover { background: var(--red-bright); border-color: var(--red-bright); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(196,30,58,0.4); }
+.btn-outline { background: transparent; color: var(--gold); border-color: var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+
+.hero-stats {
+  display: flex; justify-content: center; gap: 60px; margin-top: 60px;
+  padding-top: 40px; border-top: 1px solid rgba(197,165,90,0.25);
+}
+.hero-stat h3 {
+  font-family: var(--font-display); font-size: 2.4rem;
+  color: var(--gold); font-weight: 700;
+}
+.hero-stat p { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-top: 4px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION STYLES (SHARED)
+   ═══════════════════════════════════════════════════════════════ */
+section { padding: var(--section-pad); }
+section:nth-child(even) { background: var(--navy-light); }
+
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-label {
+  font-family: var(--font-display); font-size: 0.8rem;
+  letter-spacing: 4px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700; color: var(--white); text-transform: uppercase;
+  letter-spacing: 1px; line-height: 1.1; margin-bottom: 16px;
+}
+.section-divider {
+  width: 60px; height: 3px; background: var(--red);
+  margin: 0 auto 20px;
+}
+.section-subtitle {
+  font-family: var(--font-serif); font-size: 1.05rem;
+  color: var(--gray-light); max-width: 650px; margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ABOUT SECTION
+   ═══════════════════════════════════════════════════════════════ */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.about-img {
+  border-radius: 8px; overflow: hidden; position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.about-img img { width: 100%; height: 400px; object-fit: cover; }
+.about-img-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(10,22,40,0.9));
+  padding: 30px 20px 20px;
+}
+.about-img-overlay p {
+  font-family: var(--font-display); font-size: 0.75rem;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--gold);
+}
+.about-text h3 {
+  font-family: var(--font-display); font-size: 1.6rem;
+  color: var(--white); margin-bottom: 16px; text-transform: uppercase;
+}
+.about-text p { color: var(--gray-light); margin-bottom: 16px; font-size: 0.95rem; }
+.about-timeline { margin-top: 30px; }
+.timeline-item {
+  display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px;
+}
+.timeline-year {
+  font-family: var(--font-display); font-weight: 700;
+  color: var(--gold); font-size: 1.1rem; min-width: 50px;
+}
+.timeline-text { font-size: 0.9rem; color: var(--gray-light); }
+
+/* ═══════════════════════════════════════════════════════════════
+   BASE VOTERS
+   ═══════════════════════════════════════════════════════════════ */
+.voters-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.voter-card {
+  background: var(--navy-mid); border-radius: 8px; padding: 32px;
+  border: 1px solid rgba(197,165,90,0.15);
+  transition: all 0.3s ease;
+}
+.voter-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
+.voter-card .card-icon {
+  width: 50px; height: 50px; background: rgba(196,30,58,0.15);
+  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; color: var(--red); margin-bottom: 20px;
+}
+.voter-card h4 {
+  font-family: var(--font-display); font-size: 1.2rem;
+  color: var(--white); margin-bottom: 12px; text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.voter-card p { font-size: 0.9rem; color: var(--gray-light); }
+.voter-card .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.voter-tag {
+  font-size: 0.7rem; padding: 4px 10px; border-radius: 50px;
+  background: rgba(197,165,90,0.12); color: var(--gold);
+  font-family: var(--font-display); letter-spacing: 1px; text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MEMBERSHIP SECTION
+   ═══════════════════════════════════════════════════════════════ */
+.membership-tiers {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px; margin-bottom: 50px;
+}
+.tier-card {
+  background: var(--navy-mid); border-radius: 8px; padding: 32px;
+  text-align: center; border: 1px solid rgba(197,165,90,0.15);
+  position: relative; overflow: hidden; transition: all 0.3s ease;
+}
+.tier-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+.tier-card.featured {
+  border-color: var(--gold);
+  background: linear-gradient(135deg, var(--navy-mid) 0%, rgba(197,165,90,0.08) 100%);
+}
+.tier-card.featured::before {
+  content: 'MOST POPULAR'; position: absolute; top: 16px; right: -30px;
+  background: var(--gold); color: var(--navy); font-size: 0.6rem;
+  font-family: var(--font-display); letter-spacing: 2px;
+  padding: 4px 40px; transform: rotate(45deg); font-weight: 700;
+}
+.tier-name {
+  font-family: var(--font-display); font-size: 1.1rem;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 8px;
+}
+.tier-price {
+  font-family: var(--font-display); font-size: 2.4rem;
+  color: var(--white); font-weight: 700; margin-bottom: 4px;
+}
+.tier-price span { font-size: 0.9rem; color: var(--gray); font-weight: 400; }
+.tier-features { margin-top: 20px; }
+.tier-features li {
+  font-size: 0.85rem; color: var(--gray-light); padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex; align-items: center; gap: 8px; justify-content: center;
+}
+.tier-features li i { color: var(--gold); font-size: 0.75rem; }
+
+.donation-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  margin-top: 40px;
+}
+.donation-card {
+  background: var(--navy); border-radius: 8px; padding: 32px;
+  border-left: 4px solid var(--red);
+}
+.donation-card h4 {
+  font-family: var(--font-display); font-size: 1.2rem;
+  color: var(--white); margin-bottom: 8px; text-transform: uppercase;
+}
+.donation-card .abbr { color: var(--gold); font-size: 0.85rem; margin-bottom: 12px; }
+.donation-card p { font-size: 0.9rem; color: var(--gray-light); }
+
+/* ═══════════════════════════════════════════════════════════════
+   CANDIDATE ENDORSEMENT
+   ═══════════════════════════════════════════════════════════════ */
+.endorsement-layout {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+}
+.candidate-profile {
+  background: var(--navy-mid); border-radius: 8px; padding: 40px;
+  border: 1px solid rgba(197,165,90,0.2);
+}
+.candidate-profile .profile-header {
+  display: flex; align-items: center; gap: 20px; margin-bottom: 24px;
+  padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.candidate-avatar {
+  width: 70px; height: 70px; background: var(--red);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; color: var(--white);
+}
+.candidate-name {
+  font-family: var(--font-display); font-size: 1.4rem;
+  color: var(--white); text-transform: uppercase;
+}
+.candidate-subtitle { font-size: 0.85rem; color: var(--gold); margin-top: 2px; }
+.strength-list, .flaw-list { margin-top: 16px; }
+.strength-list li, .flaw-list li {
+  display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px;
+  font-size: 0.9rem; color: var(--gray-light);
+}
+.strength-list li i { color: #22c55e; margin-top: 4px; }
+.flaw-list li i { color: var(--red-bright); margin-top: 4px; }
+
+.endorsement-criteria {
+  background: var(--navy-mid); border-radius: 8px; padding: 40px;
+  border: 1px solid rgba(197,165,90,0.2);
+}
+.criteria-item {
+  display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px;
+  padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.criteria-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.criteria-num {
+  font-family: var(--font-display); font-size: 2rem;
+  color: var(--gold); font-weight: 700; min-width: 40px;
+}
+.criteria-item h4 {
+  font-family: var(--font-display); font-size: 1rem;
+  color: var(--white); text-transform: uppercase; margin-bottom: 6px;
+}
+.criteria-item p { font-size: 0.88rem; color: var(--gray-light); }
+
+/* ═══════════════════════════════════════════════════════════════
+   SLOGAN BANNER
+   ═══════════════════════════════════════════════════════════════ */
+.slogan-section {
+  position: relative; padding: 100px 0; overflow: hidden;
+  background: url('https://images.unsplash.com/photo-1508433957232-3107f5fd5995?w=1920&q=80') center/cover no-repeat;
+}
+.slogan-section::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(196,30,58,0.88) 0%, rgba(10,22,40,0.92) 100%);
+}
+.slogan-content {
+  position: relative; z-index: 2; text-align: center;
+  max-width: 900px; margin: 0 auto; padding: 0 24px;
+}
+.slogan-main {
+  font-family: var(--font-display); font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 700; color: var(--white); text-transform: uppercase;
+  line-height: 1.1; letter-spacing: 3px; margin-bottom: 20px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.slogan-sub {
+  font-family: var(--font-serif); font-size: 1.15rem;
+  color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto 30px;
+}
+.slogan-bumper {
+  display: inline-block; background: var(--navy);
+  padding: 14px 40px; border-radius: 4px;
+  font-family: var(--font-display); font-size: 1rem;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); border: 2px solid var(--gold);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MEDIA STRATEGY
+   ═══════════════════════════════════════════════════════════════ */
+.media-comparison {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 50px;
+}
+.media-col { background: var(--navy-mid); border-radius: 8px; overflow: hidden; }
+.media-col-header {
+  padding: 20px 28px; font-family: var(--font-display);
+  font-size: 1rem; letter-spacing: 2px; text-transform: uppercase;
+  display: flex; align-items: center; gap: 12px;
+}
+.media-col.friendly .media-col-header { background: rgba(34,197,94,0.15); color: #22c55e; border-bottom: 2px solid #22c55e; }
+.media-col.hostile .media-col-header { background: rgba(239,68,68,0.15); color: #ef4444; border-bottom: 2px solid #ef4444; }
+
+.media-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 28px; border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.2s;
+}
+.media-item:hover { background: rgba(255,255,255,0.03); }
+.media-item:last-child { border-bottom: none; }
+.media-icon {
+  width: 40px; height: 40px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+.friendly .media-icon { background: rgba(34,197,94,0.12); color: #22c55e; }
+.hostile .media-icon { background: rgba(239,68,68,0.12); color: #ef4444; }
+.media-item h5 { font-family: var(--font-display); color: var(--white); font-size: 0.95rem; letter-spacing: 1px; }
+.media-item p { font-size: 0.8rem; color: var(--gray); margin-top: 2px; }
+
+.media-strategy-text {
+  background: var(--navy-mid); border-radius: 8px; padding: 32px;
+  border-left: 4px solid var(--gold);
+}
+.media-strategy-text h4 {
+  font-family: var(--font-display); color: var(--white);
+  font-size: 1.1rem; margin-bottom: 12px; text-transform: uppercase;
+}
+.media-strategy-text p { color: var(--gray-light); font-size: 0.92rem; margin-bottom: 12px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   ADVOCACY PLAN
+   ═══════════════════════════════════════════════════════════════ */
+.advocacy-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+}
+.advocacy-card {
+  background: var(--navy-mid); border-radius: 8px; padding: 36px;
+  border-top: 4px solid var(--red); position: relative;
+  transition: all 0.3s ease;
+}
+.advocacy-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
+.advocacy-num {
+  position: absolute; top: 16px; right: 20px;
+  font-family: var(--font-display); font-size: 3rem;
+  color: rgba(197,165,90,0.1); font-weight: 700;
+}
+.advocacy-card h4 {
+  font-family: var(--font-display); color: var(--gold);
+  font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.advocacy-card p { font-size: 0.9rem; color: var(--gray-light); margin-bottom: 12px; }
+.advocacy-card ul { margin-top: 12px; }
+.advocacy-card ul li {
+  font-size: 0.85rem; color: var(--gray-light);
+  padding: 6px 0; display: flex; gap: 8px; align-items: flex-start;
+}
+.advocacy-card ul li i { color: var(--red); margin-top: 4px; font-size: 0.7rem; }
+
+/* ═══════════════════════════════════════════════════════════════
+   ATTRACTING CANDIDATES
+   ═══════════════════════════════════════════════════════════════ */
+.attract-layout {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+}
+.attract-benefits {
+  background: var(--navy-mid); border-radius: 8px; padding: 36px;
+  border: 1px solid rgba(197,165,90,0.2);
+}
+.attract-benefits h3 {
+  font-family: var(--font-display); color: var(--white);
+  font-size: 1.3rem; text-transform: uppercase; margin-bottom: 24px;
+}
+.benefit-item {
+  display: flex; gap: 16px; margin-bottom: 24px;
+}
+.benefit-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(196,30,58,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; color: var(--red); flex-shrink: 0;
+}
+.benefit-item h4 {
+  font-family: var(--font-display); color: var(--white);
+  font-size: 0.95rem; text-transform: uppercase; margin-bottom: 4px;
+}
+.benefit-item p { font-size: 0.85rem; color: var(--gray-light); }
+
+.attract-policy {
+  background: var(--navy-mid); border-radius: 8px; padding: 36px;
+  border: 1px solid rgba(197,165,90,0.2);
+}
+.attract-policy h3 {
+  font-family: var(--font-display); color: var(--white);
+  font-size: 1.3rem; text-transform: uppercase; margin-bottom: 24px;
+}
+.policy-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.policy-row:last-child { border-bottom: none; }
+.policy-name { font-size: 0.9rem; color: var(--gray-light); }
+.policy-status {
+  font-family: var(--font-display); font-size: 0.75rem;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 50px;
+}
+.policy-status.aligned { background: rgba(34,197,94,0.15); color: #22c55e; }
+.policy-status.push { background: rgba(234,179,8,0.15); color: #eab308; }
+.policy-status.critical { background: rgba(239,68,68,0.15); color: #ef4444; }
+
+/* ═══════════════════════════════════════════════════════════════
+   KEY STATES
+   ═══════════════════════════════════════════════════════════════ */
+.states-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+.state-card {
+  background: var(--navy-mid); border-radius: 8px; overflow: hidden;
+  border: 1px solid rgba(197,165,90,0.12); transition: all 0.3s ease;
+}
+.state-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+.state-header {
+  padding: 20px 28px; display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.state-name {
+  font-family: var(--font-display); font-size: 1.3rem;
+  color: var(--white); text-transform: uppercase; letter-spacing: 2px;
+}
+.state-ev {
+  font-family: var(--font-display); font-size: 0.75rem;
+  letter-spacing: 1px; color: var(--gold); padding: 4px 12px;
+  border: 1px solid var(--gold); border-radius: 50px;
+}
+.state-body { padding: 24px 28px; }
+.state-body p { font-size: 0.88rem; color: var(--gray-light); margin-bottom: 10px; }
+.state-stat {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.82rem; color: var(--gold); margin-bottom: 6px;
+}
+.state-stat i { font-size: 0.75rem; }
+.state-strategy {
+  margin-top: 16px; padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.state-strategy h5 {
+  font-family: var(--font-display); color: var(--white);
+  font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.strategy-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.strategy-tag {
+  font-size: 0.7rem; padding: 4px 10px; border-radius: 4px;
+  background: rgba(196,30,58,0.15); color: var(--red-bright);
+  font-family: var(--font-display); letter-spacing: 1px; text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════════ */
+footer {
+  background: var(--navy); border-top: 2px solid var(--gold);
+  padding: 50px 0 30px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-brand .footer-logo {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--font-display); font-size: 1.2rem;
+  color: var(--white); letter-spacing: 3px; margin-bottom: 16px;
+}
+.footer-brand .footer-logo-icon {
+  width: 36px; height: 36px; background: var(--gold);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; color: var(--navy); font-weight: 700;
+}
+.footer-brand p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+.footer-col h4 {
+  font-family: var(--font-display); font-size: 0.9rem;
+  color: var(--gold); letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.footer-col li { margin-bottom: 10px; }
+.footer-col a {
+  font-size: 0.85rem; color: var(--gray-light);
+  transition: color 0.2s; display: flex; align-items: center; gap: 8px;
+}
+.footer-col a:hover { color: var(--gold); }
+.footer-col a i { font-size: 0.75rem; color: var(--gray); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 20px; text-align: center;
+}
+.footer-disclaimer {
+  font-size: 0.78rem; color: var(--gray); line-height: 1.6;
+}
+.footer-disclaimer strong { color: var(--gold); }
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 968px) {
+  .about-grid, .endorsement-layout, .attract-layout, .donation-grid, .media-comparison { grid-template-columns: 1fr; }
+  .advocacy-cards { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: column; gap: 20px; }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; position: fixed; top: 70px; left: 0; right: 0;
+    background: var(--navy); flex-direction: column; padding: 20px;
+    border-bottom: 2px solid var(--gold);
+  }
+  .nav-links.open { display: flex; }
+  .hamburger { display: block; }
+  .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+  .states-grid { grid-template-columns: 1fr; }
+  section { padding: 50px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════ NAVIGATION ════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="logo-icon"><i class="fas fa-shield-halved"></i></div>
+      NRA
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#voters">Voters</a>
+      <a href="#membership">Membership</a>
+      <a href="#endorsement">Endorsement</a>
+      <a href="#slogan">Slogan</a>
+      <a href="#media">Media</a>
+      <a href="#advocacy">Advocacy</a>
+      <a href="#candidates">Candidates</a>
+      <a href="#states">Key States</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ════════════════ HERO ════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fas fa-star"></i> National Rifle Association of America <i class="fas fa-star"></i>
+    </div>
+    <h1>
+      Defend Freedom.<br>
+      <span>Defend the Second.</span>
+    </h1>
+    <p class="hero-sub">
+      For over 150 years, the NRA has stood as America's foremost defender of Second Amendment rights.
+      This election, the stakes have never been higher.
+    </p>
+    <div class="hero-cta">
+      <a href="#endorsement" class="btn btn-primary"><i class="fas fa-check-to-slot"></i> Our Endorsement</a>
+      <a href="#advocacy" class="btn btn-outline"><i class="fas fa-bullhorn"></i> Advocacy Plan</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <h3>5M+</h3>
+        <p>Active Members</p>
+      </div>
+      <div class="hero-stat">
+        <h3>1871</h3>
+        <p>Year Founded</p>
+      </div>
+      <div class="hero-stat">
+        <h3>50</h3>
+        <p>State Affiliates</p>
+      </div>
+      <div class="hero-stat">
+        <h3>$350M+</h3>
+        <p>Annual Revenue</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ ABOUT ════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Who We Are</p>
+      <h2 class="section-title">About the NRA</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">America's oldest civil rights organization, defending the constitutional right to keep and bear arms since 1871.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1569407228235-9a744831a150?w=800&q=80" alt="American flag waving">
+        <div class="about-img-overlay">
+          <p><i class="fas fa-flag-usa"></i> Defending freedom since 1871</p>
+        </div>
+      </div>
+      <div class="about-text">
+        <h3>Our Mission &amp; History</h3>
+        <p>
+          The <strong>National Rifle Association of America (NRA)</strong> was founded in 1871 by Union veterans Col. William C. Church and Gen. George Wingate to promote and encourage rifle marksmanship among citizens. Today, it is the most influential gun rights lobbying organization in the United States.
+        </p>
+        <p>
+          The NRA's mission centers on protecting the Second Amendment of the U.S. Constitution, which guarantees "the right of the people to keep and bear Arms." As a political interest group, the NRA wields significant influence in American elections through candidate endorsements, campaign contributions via its Political Action Committee (NRA-PVF), grassroots voter mobilization, and legislative lobbying through the NRA Institute for Legislative Action (NRA-ILA).
+        </p>
+        <p>
+          With over 5 million dues-paying members, the NRA is one of the most powerful interest groups in American politics. It scores and grades politicians on their gun rights voting records and invests heavily in elections at the federal, state, and local levels.
+        </p>
+        <div class="about-timeline">
+          <div class="timeline-item">
+            <span class="timeline-year">1871</span>
+            <p class="timeline-text">Founded in New York by Union veterans to improve marksmanship</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">1934</span>
+            <p class="timeline-text">Began legislative division opposing the National Firearms Act</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">1975</span>
+            <p class="timeline-text">Created the Institute for Legislative Action (NRA-ILA) — the lobbying arm</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">1977</span>
+            <p class="timeline-text">"Revolt at Cincinnati" shifted NRA focus toward political advocacy</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2008</span>
+            <p class="timeline-text">Supported <em>District of Columbia v. Heller</em>, affirming individual right to bear arms</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ BASE VOTERS ════════════════ -->
+<section id="voters">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Our Coalition</p>
+      <h2 class="section-title">Our Base Voters</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Understanding the Americans who stand with the NRA to defend their constitutional freedoms.</p>
+    </div>
+    <div class="voters-grid">
+      <div class="voter-card">
+        <div class="card-icon"><i class="fas fa-user-group"></i></div>
+        <h4>Demographics</h4>
+        <p>NRA supporters are predominantly white males aged 35&ndash;65+, though membership spans all demographics. They are concentrated in rural and suburban communities across the South, Midwest, and Mountain West. Many are middle-income to upper-middle-income earners ($50K&ndash;$150K), with backgrounds in blue-collar trades, law enforcement, military service, and small business ownership.</p>
+        <div class="tag-row">
+          <span class="voter-tag">Rural America</span>
+          <span class="voter-tag">Veterans</span>
+          <span class="voter-tag">Suburban</span>
+          <span class="voter-tag">Blue Collar</span>
+        </div>
+      </div>
+      <div class="voter-card">
+        <div class="card-icon"><i class="fas fa-crosshairs"></i></div>
+        <h4>Motivations</h4>
+        <p>NRA voters are driven by a deep conviction that the Second Amendment is a fundamental American right. Core motivations include: self-defense and personal protection, hunting and outdoor recreation traditions, opposition to gun control legislation they see as government overreach, and preservation of a cultural identity tied to responsible firearms ownership.</p>
+        <div class="tag-row">
+          <span class="voter-tag">2nd Amendment</span>
+          <span class="voter-tag">Self-Defense</span>
+          <span class="voter-tag">Anti-Overreach</span>
+        </div>
+      </div>
+      <div class="voter-card">
+        <div class="card-icon"><i class="fas fa-landmark-dome"></i></div>
+        <h4>Political Profile</h4>
+        <p>NRA base voters are overwhelmingly registered Republicans or conservative-leaning Independents. Gun rights consistently rank as a top-3 voting issue for these voters. They are single-issue voters in many cases&mdash;an "F" rating from the NRA can end a candidacy in rural districts. They are highly motivated, high-propensity voters with above-average turnout rates.</p>
+        <div class="tag-row">
+          <span class="voter-tag">Republican</span>
+          <span class="voter-tag">Single-Issue</span>
+          <span class="voter-tag">High Turnout</span>
+        </div>
+      </div>
+      <div class="voter-card">
+        <div class="card-icon"><i class="fas fa-map-location-dot"></i></div>
+        <h4>Geographic Strongholds</h4>
+        <p>NRA membership is strongest in states with deep hunting traditions and permissive firearms laws: Texas, Florida, Pennsylvania, Ohio, Georgia, North Carolina, Virginia, and across the Mountain West (Montana, Wyoming, Idaho). Rural counties in swing states are critical NRA territory where even modest turnout boosts can decide statewide races.</p>
+        <div class="tag-row">
+          <span class="voter-tag">Texas</span>
+          <span class="voter-tag">Florida</span>
+          <span class="voter-tag">Pennsylvania</span>
+          <span class="voter-tag">Mountain West</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ MEMBERSHIP ════════════════ -->
+<section id="membership">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Join the Fight</p>
+      <h2 class="section-title">Membership &amp; Donations</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">From first-time members to Patron Life Members, every NRA supporter fuels the defense of the Second Amendment.</p>
+    </div>
+
+    <div class="membership-tiers">
+      <div class="tier-card">
+        <p class="tier-name">Regular</p>
+        <p class="tier-price">$45<span>/year</span></p>
+        <ul class="tier-features">
+          <li><i class="fas fa-check"></i> Choice of NRA magazine</li>
+          <li><i class="fas fa-check"></i> $2,500 insurance coverage</li>
+          <li><i class="fas fa-check"></i> Member discounts</li>
+          <li><i class="fas fa-check"></i> Voting rights at Annual Meeting</li>
+          <li><i class="fas fa-check"></i> Legislative action alerts</li>
+        </ul>
+      </div>
+      <div class="tier-card featured">
+        <p class="tier-name">Life Member</p>
+        <p class="tier-price">$1,500<span> one-time</span></p>
+        <ul class="tier-features">
+          <li><i class="fas fa-check"></i> All regular benefits</li>
+          <li><i class="fas fa-check"></i> Lifetime membership card</li>
+          <li><i class="fas fa-check"></i> Gold lapel pin</li>
+          <li><i class="fas fa-check"></i> $10,000 insurance coverage</li>
+          <li><i class="fas fa-check"></i> Access to Life Member events</li>
+          <li><i class="fas fa-check"></i> Payment plans available</li>
+        </ul>
+      </div>
+      <div class="tier-card">
+        <p class="tier-name">Patron Life</p>
+        <p class="tier-price">$5,000<span> one-time</span></p>
+        <ul class="tier-features">
+          <li><i class="fas fa-check"></i> All Life Member benefits</li>
+          <li><i class="fas fa-check"></i> Exclusive patron pin &amp; gifts</li>
+          <li><i class="fas fa-check"></i> VIP Annual Meeting access</li>
+          <li><i class="fas fa-check"></i> Recognition in publications</li>
+          <li><i class="fas fa-check"></i> Elite member network</li>
+        </ul>
+      </div>
+      <div class="tier-card">
+        <p class="tier-name">Benefactor Life</p>
+        <p class="tier-price">$10,000<span> one-time</span></p>
+        <ul class="tier-features">
+          <li><i class="fas fa-check"></i> Highest membership tier</li>
+          <li><i class="fas fa-check"></i> All Patron benefits</li>
+          <li><i class="fas fa-check"></i> Exclusive Benefactor events</li>
+          <li><i class="fas fa-check"></i> Custom engraved firearm options</li>
+          <li><i class="fas fa-check"></i> Direct leadership access</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="donation-grid">
+      <div class="donation-card">
+        <h4>NRA-PVF</h4>
+        <p class="abbr">Political Victory Fund</p>
+        <p>The NRA's Political Action Committee (PAC) that directly contributes to pro-Second Amendment candidates' campaigns. The NRA-PVF evaluates candidates based on their voting records, public statements, and questionnaire responses. It then issues letter grades (A+ through F) and endorsements. In the 2020 election cycle, the NRA-PVF spent over $29 million on federal elections, making it one of the most active PACs in American politics.</p>
+      </div>
+      <div class="donation-card">
+        <h4>NRA-ILA</h4>
+        <p class="abbr">Institute for Legislative Action</p>
+        <p>The NRA's lobbying arm, established in 1975, works to influence legislation at the federal, state, and local levels. The NRA-ILA employs full-time lobbyists in Washington D.C. and every state capital. It drafts model legislation (like "Stand Your Ground" and concealed carry reciprocity laws), tracks bills, mobilizes grassroots campaigns, and coordinates with allied organizations to protect gun rights through the legislative process.</p>
+      </div>
+    </div>
+
+    <div class="media-strategy-text" style="margin-top: 40px;">
+      <h4><i class="fas fa-envelope-open-text" style="color: var(--gold); margin-right: 8px;"></i> Staying Connected</h4>
+      <p>NRA members stay engaged through a network of publications, digital media, and events. Members receive one of three flagship magazines: <em>American Rifleman</em>, <em>American Hunter</em>, or <em>America's 1st Freedom</em>. They also receive email action alerts from the NRA-ILA, access to NRA TV and podcast content, invitations to the NRA Annual Meetings &amp; Exhibits Show (drawing 80,000+ attendees), local chapter events, firearms training courses, and exclusive member competitions and shooting events.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ ENDORSEMENT ════════════════ -->
+<section id="endorsement">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Our Pick</p>
+      <h2 class="section-title">Candidate Endorsement</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Analyzing the ideal pro-Second Amendment candidate profile the NRA would back in a presidential general election.</p>
+    </div>
+    <div class="endorsement-layout">
+      <div class="candidate-profile">
+        <div class="profile-header">
+          <div class="candidate-avatar"><i class="fas fa-user"></i></div>
+          <div>
+            <h3 class="candidate-name">Ideal NRA Candidate</h3>
+            <p class="candidate-subtitle"><i class="fas fa-shield-halved"></i> NRA A+ Rated &bull; Republican &bull; Pro-2A Champion</p>
+          </div>
+        </div>
+
+        <h4 style="font-family: var(--font-display); color: #22c55e; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px;">
+          <i class="fas fa-check-circle"></i> Strengths
+        </h4>
+        <ul class="strength-list">
+          <li><i class="fas fa-check"></i> <span>Consistent voting record defending Second Amendment rights across state and federal office, with concrete legislative accomplishments (e.g., signing concealed carry or constitutional carry bills)</span></li>
+          <li><i class="fas fa-check"></i> <span>Personal connection to firearms culture — a gun owner, hunter, or sport shooter who authentically represents NRA members' values, not just a political convenience</span></li>
+          <li><i class="fas fa-check"></i> <span>Strong electability in a general election: swing-state appeal, crossover appeal to rural Democrats and independent voters, strong debate skills, and charismatic campaign presence</span></li>
+          <li><i class="fas fa-check"></i> <span>Commitment to appointing constitutionalist federal judges and Supreme Court justices who will uphold <em>Heller</em> and <em>Bruen</em> precedents protecting individual gun rights</span></li>
+          <li><i class="fas fa-check"></i> <span>Opposition to federal gun control measures: assault weapons bans, universal background check expansions, red flag laws, and ATF overreach on pistol braces and stabilizers</span></li>
+        </ul>
+
+        <h4 style="font-family: var(--font-display); color: var(--red-bright); font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; margin-top: 28px; margin-bottom: 12px;">
+          <i class="fas fa-triangle-exclamation"></i> Potential Risks
+        </h4>
+        <ul class="flaw-list">
+          <li><i class="fas fa-xmark"></i> <span>History of bipartisan compromise on gun legislation could alienate hardline NRA members who view any concession as a slippery slope</span></li>
+          <li><i class="fas fa-xmark"></i> <span>Polarizing statements on social issues unrelated to guns could limit broad coalition-building and give media ammunition to attack by association</span></li>
+          <li><i class="fas fa-xmark"></i> <span>Vulnerability to being framed as "extreme" on guns after mass shooting events, requiring careful media strategy and rapid-response messaging</span></li>
+        </ul>
+      </div>
+
+      <div class="endorsement-criteria">
+        <h3 style="font-family: var(--font-display); color: var(--white); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 28px;">
+          <i class="fas fa-clipboard-check" style="color: var(--gold); margin-right: 8px;"></i> NRA Endorsement Criteria
+        </h3>
+        <div class="criteria-item">
+          <span class="criteria-num">01</span>
+          <div>
+            <h4>Legislative Record</h4>
+            <p>Candidates are scored on every gun-related vote cast during their career. The NRA-PVF assigns letter grades from A+ to F. Only candidates with consistent A or A+ ratings earn the endorsement. A single vote for a gun control bill can drop a grade.</p>
+          </div>
+        </div>
+        <div class="criteria-item">
+          <span class="criteria-num">02</span>
+          <div>
+            <h4>Questionnaire Responses</h4>
+            <p>Candidates complete a detailed NRA-PVF questionnaire covering their positions on concealed carry, magazine limits, "assault weapon" bans, red flag laws, ATF funding, and Second Amendment philosophy. Answers are compared against voting records for consistency.</p>
+          </div>
+        </div>
+        <div class="criteria-item">
+          <span class="criteria-num">03</span>
+          <div>
+            <h4>Electability Analysis</h4>
+            <p>The NRA strategically endorses candidates who can win. An ideologically perfect candidate who can't win the general election doesn't advance the cause. The NRA evaluates polling, fundraising strength, campaign infrastructure, and electoral history.</p>
+          </div>
+        </div>
+        <div class="criteria-item">
+          <span class="criteria-num">04</span>
+          <div>
+            <h4>Judicial Commitment</h4>
+            <p>For presidential endorsements, the candidate's stated approach to judicial appointments is critical. The NRA needs assurance that federal judge nominees will uphold the individual rights interpretation of the Second Amendment established in <em>Heller</em> (2008) and expanded in <em>Bruen</em> (2022).</p>
+          </div>
+        </div>
+        <div class="criteria-item">
+          <span class="criteria-num">05</span>
+          <div>
+            <h4>In-Office Advocacy</h4>
+            <p>Beyond campaigning, the NRA needs a president who will actively champion gun rights once in office: vetoing gun control bills, using executive orders to protect gun owners, directing ATF to reduce regulatory burden, and using the bully pulpit to normalize responsible gun ownership.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SLOGAN ════════════════ -->
+<section class="slogan-section" id="slogan">
+  <div class="slogan-content">
+    <p style="font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;">
+      <i class="fas fa-star"></i> Our Campaign Message <i class="fas fa-star"></i>
+    </p>
+    <h2 class="slogan-main">
+      Freedom Isn't Free.<br>But It's Worth Fighting For.
+    </h2>
+    <p class="slogan-sub">
+      The Second Amendment isn't a suggestion&mdash;it's a right. This election, vote like your freedoms depend on it. Because they do.
+    </p>
+    <div class="slogan-bumper">
+      <i class="fas fa-shield-halved"></i> &nbsp;Vote Freedom First &mdash; NRA 2024&nbsp; <i class="fas fa-shield-halved"></i>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ MEDIA STRATEGY ════════════════ -->
+<section id="media">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Communications</p>
+      <h2 class="section-title">Media Strategy</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Identifying friendly and hostile media outlets and how the NRA navigates the media landscape.</p>
+    </div>
+
+    <div class="media-comparison">
+      <div class="media-col friendly">
+        <div class="media-col-header">
+          <i class="fas fa-thumbs-up"></i> Friendly Outlets
+        </div>
+        <div class="media-item">
+          <div class="media-icon"><i class="fas fa-tv"></i></div>
+          <div>
+            <h5>Fox News</h5>
+            <p>Largest cable news audience; sympathetic anchors and primetime coverage of 2A issues</p>
+          </div>
+        </div>
+        <div class="media-item">
+          <div class="media-icon"><i class="fas fa-tv"></i></div>
+          <div>
+            <h5>Newsmax</h5>
+            <p>Growing conservative audience; open to NRA leadership interviews and sponsored content</p>
+          </div>
+        </div>
+        <div class="media-item">
+          <div class="media-icon"><i class="fas fa-radio"></i></div>
+          <div>
+            <h5>Conservative Talk Radio</h5>
+            <p>Syndicated hosts (Hannity, Bongino, Levin) reach millions of NRA-aligned listeners daily</p>
+          </div>
+        </div>
+        <div class="media-item">
+          <div class="media-icon"><i class="fas fa-podcast"></i></div>
+          <div>
+            <h5>Podcasts &amp; YouTube</h5>
+            <p>Channels like Hickok45, Colion Noir, and Gun Talk reach engaged firearms enthusiasts</p>
+          </div>
+        </div>
+        <div class="media-item">
+          <div class="media-icon"><i class="fas fa-tree"></i></div>
+          <div>
+            <h5>Outdoor &amp; Hunting Media</h5>
+            <p>Outdoor Life, Field &amp; Stream, SHOT Show publications — endemic audience overlap</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="media-col hostile">
+        <div class="media-col-header">
+          <i class="fas fa-thumbs-down"></i> Hostile Outlets
+        </div>
+        <div class="media-item">
+          <div class="media-icon"><i class="fas fa-tv"></i></div>
+          <div>
+            <h5>CNN</h5>
+            <p>Frequently frames NRA as obstacle to "common-sense" gun reform; adversarial interviews</p>
+          </div>
+        </div>
+        <div class="media-item">
+          <div class="media-icon"><i class="fas fa-tv"></i></div>
+          <div>
+            <h5>MSNBC</h5>
+            <p>Consistently critical editorial stance; hosts openly advocate for gun control legislation</p>
+          </div>
+        </div>
+        <div class="media-item">
+          <div class="media-icon"><i class="fas fa-newspaper"></i></div>
+          <div>
+            <h5>The New York Times</h5>
+            <p>Editorial board regularly publishes anti-NRA opinion pieces and investigative reports</p>
+          </div>
+        </div>
+        <div class="media-item">
+          <div class="media-icon"><i class="fas fa-newspaper"></i></div>
+          <div>
+            <h5>The Washington Post</h5>
+            <p>Aggressive fact-checking of NRA claims; coverage focused on gun violence statistics</p>
+          </div>
+        </div>
+        <div class="media-item">
+          <div class="media-icon"><i class="fas fa-globe"></i></div>
+          <div>
+            <h5>The Atlantic / Vox / HuffPost</h5>
+            <p>Long-form investigative pieces challenging NRA finances, influence, and policy positions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="media-strategy-text">
+      <h4><i class="fas fa-chess" style="color: var(--gold); margin-right: 8px;"></i> Cultivating Friendly Media</h4>
+      <p>The NRA maintains relationships with friendly outlets through a multi-pronged strategy: providing exclusive access to NRA leadership for interviews and op-eds, sponsoring segments on gun safety and shooting sports, offering press credentials at NRA events to friendly journalists, supplying rapid-response soundbites after breaking news events, and producing its own media content (NRA TV, podcasts, social media) to bypass hostile gatekeepers entirely.</p>
+      <p>When engaging hostile media, the NRA sends media-trained spokespeople who can pivot to core messaging — framing gun rights as civil rights, emphasizing law-abiding gun owners vs. criminals, and redirecting conversations from the weapon to the root causes of violence (mental health, enforcement failures, etc.).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ ADVOCACY PLAN ════════════════ -->
+<section id="advocacy">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">The Game Plan</p>
+      <h2 class="section-title">Three-Point Advocacy Plan</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">How the NRA gets its message through candidates, media, and the grassroots to win this election.</p>
+    </div>
+
+    <div class="advocacy-cards">
+      <div class="advocacy-card">
+        <span class="advocacy-num">01</span>
+        <h4>Arm Candidates with Messaging</h4>
+        <p>Ensure every NRA-endorsed candidate is fluent in Second Amendment talking points and can defend gun rights on any debate stage or interview.</p>
+        <ul>
+          <li><i class="fas fa-chevron-right"></i> Provide candidates with NRA-tested messaging guides covering the most common gun control arguments and research-backed rebuttals</li>
+          <li><i class="fas fa-chevron-right"></i> Host pre-debate briefing sessions and opposition research packets so endorsed candidates never get caught flat-footed on 2A issues</li>
+          <li><i class="fas fa-chevron-right"></i> Deploy NRA surrogates (veterans, law enforcement, competitive shooters) to campaign with candidates and add credibility to their pro-gun stance</li>
+          <li><i class="fas fa-chevron-right"></i> Stage high-visibility events: candidate speeches at NRA Annual Meeting, joint appearances at gun ranges, and community self-defense seminars</li>
+        </ul>
+      </div>
+      <div class="advocacy-card">
+        <span class="advocacy-num">02</span>
+        <h4>Dominate the Information Space</h4>
+        <p>Control the narrative on gun rights through earned media, paid media, and owned media channels before opponents can define the terms.</p>
+        <ul>
+          <li><i class="fas fa-chevron-right"></i> Run targeted TV, radio, and digital ads in battleground states that frame the election as a choice between freedom and government overreach</li>
+          <li><i class="fas fa-chevron-right"></i> Flood social media with shareable content: infographics on self-defense statistics, testimonials from women and minority gun owners, and "myth vs. fact" posts countering gun control narratives</li>
+          <li><i class="fas fa-chevron-right"></i> Rapid-response team to push back in real-time on social media when anti-NRA narratives emerge — particularly after high-profile incidents</li>
+          <li><i class="fas fa-chevron-right"></i> Earned media blitz: NRA spokespeople booked across all friendly outlets simultaneously during key news cycles</li>
+        </ul>
+      </div>
+      <div class="advocacy-card">
+        <span class="advocacy-num">03</span>
+        <h4>Mobilize the Membership Base</h4>
+        <p>Convert 5 million members into a ground-level army of voter contacts, door-knockers, and Get Out The Vote (GOTV) organizers.</p>
+        <ul>
+          <li><i class="fas fa-chevron-right"></i> NRA-ILA action alerts: targeted emails and texts to members in battleground states with specific instructions — who to vote for, when, where, and why</li>
+          <li><i class="fas fa-chevron-right"></i> Deploy volunteer phone banks and door-to-door canvassers in key precincts, focusing on low-propensity gun owners who may not vote without a push</li>
+          <li><i class="fas fa-chevron-right"></i> Use NRA membership data to micro-target: identify unregistered gun owners, register them, and drive them to the polls with personalized outreach</li>
+          <li><i class="fas fa-chevron-right"></i> Host "Freedom rallies" and gun shows in swing states during the final weeks — combining entertainment, voter registration drives, and candidate appearances</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ ATTRACTING CANDIDATES ════════════════ -->
+<section id="candidates">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Political Influence</p>
+      <h2 class="section-title">Attracting Candidate Support</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Why candidates seek the NRA endorsement and what policies drive the relationship.</p>
+    </div>
+
+    <div class="attract-layout">
+      <div class="attract-benefits">
+        <h3><i class="fas fa-handshake" style="color: var(--gold); margin-right: 8px;"></i> What Candidates Gain</h3>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-certificate"></i></div>
+          <div>
+            <h4>The NRA Endorsement Seal</h4>
+            <p>An NRA A-rating is political gold in Republican primaries and rural general election districts. It signals to millions of single-issue voters that this candidate will protect their rights. For many voters, the NRA grade is the only endorsement that matters.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-money-bill-wave"></i></div>
+          <div>
+            <h4>Campaign Funding</h4>
+            <p>NRA-PVF directly contributes to endorsed candidates and runs independent expenditure campaigns (TV ads, mailers, digital) on their behalf. In competitive races, NRA independent expenditures can exceed $10 million, providing a massive financial boost in the final stretch.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-people-group"></i></div>
+          <div>
+            <h4>Voter Mobilization Machine</h4>
+            <p>The NRA's 5 million members are a built-in volunteer army. NRA-ILA voter contact programs, phone banks, and door-knocking operations can deliver thousands of additional votes in tight races — the difference between winning and losing in swing states.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-bullhorn"></i></div>
+          <div>
+            <h4>Media Amplification</h4>
+            <p>NRA social channels, publications, and events give endorsed candidates direct access to millions of engaged, politically active Americans without going through mainstream media filters. An NRA Annual Meeting keynote speech reaches more gun owners than any cable news interview.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="attract-policy">
+        <h3><i class="fas fa-list-check" style="color: var(--gold); margin-right: 8px;"></i> Policy Alignment Scorecard</h3>
+        <div class="policy-row">
+          <span class="policy-name">Constitutional Carry (permitless carry)</span>
+          <span class="policy-status aligned">Aligned</span>
+        </div>
+        <div class="policy-row">
+          <span class="policy-name">Oppose Assault Weapons Ban</span>
+          <span class="policy-status aligned">Aligned</span>
+        </div>
+        <div class="policy-row">
+          <span class="policy-name">Protect PLCAA (gun manufacturer liability shield)</span>
+          <span class="policy-status aligned">Aligned</span>
+        </div>
+        <div class="policy-row">
+          <span class="policy-name">Concealed Carry Reciprocity Act</span>
+          <span class="policy-status push">Needs Push</span>
+        </div>
+        <div class="policy-row">
+          <span class="policy-name">Repeal NFA Short-Barrel Rifle restrictions</span>
+          <span class="policy-status push">Needs Push</span>
+        </div>
+        <div class="policy-row">
+          <span class="policy-name">Hearing Protection Act (suppressor deregulation)</span>
+          <span class="policy-status push">Needs Push</span>
+        </div>
+        <div class="policy-row">
+          <span class="policy-name">Oppose Red Flag / ERPO laws</span>
+          <span class="policy-status critical">Critical</span>
+        </div>
+        <div class="policy-row">
+          <span class="policy-name">Oppose Universal Background Check expansion</span>
+          <span class="policy-status critical">Critical</span>
+        </div>
+        <div class="policy-row">
+          <span class="policy-name">Block ATF pistol brace reclassification</span>
+          <span class="policy-status critical">Critical</span>
+        </div>
+        <div class="policy-row">
+          <span class="policy-name">Pro-2A judicial appointments</span>
+          <span class="policy-status aligned">Aligned</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ KEY STATES ════════════════ -->
+<section id="states">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Battleground Map</p>
+      <h2 class="section-title">Five Key States</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Where the NRA focuses its resources to maximize electoral impact in a presidential election.</p>
+    </div>
+
+    <div class="states-grid">
+      <div class="state-card">
+        <div class="state-header">
+          <span class="state-name"><i class="fas fa-location-dot" style="color: var(--red); margin-right: 8px;"></i>Pennsylvania</span>
+          <span class="state-ev">19 Electoral Votes</span>
+        </div>
+        <div class="state-body">
+          <p>Pennsylvania is the ultimate swing state for gun politics. Philadelphia and Pittsburgh lean heavily Democratic, but the vast rural "T" in between is deep NRA country — hunters, sportsmen, and blue-collar gun owners who can swing the state.</p>
+          <div class="state-stat"><i class="fas fa-users"></i> ~300,000 estimated NRA members &amp; supporters</div>
+          <div class="state-stat"><i class="fas fa-bullseye"></i> #1 hunting license state in the U.S. (~900,000 licenses)</div>
+          <div class="state-strategy">
+            <h5>NRA Strategy</h5>
+            <div class="strategy-tags">
+              <span class="strategy-tag">Rural GOTV Blitz</span>
+              <span class="strategy-tag">Hunting Culture Ads</span>
+              <span class="strategy-tag">Union Gun Owner Outreach</span>
+              <span class="strategy-tag">Philly Suburb Defense</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="state-card">
+        <div class="state-header">
+          <span class="state-name"><i class="fas fa-location-dot" style="color: var(--red); margin-right: 8px;"></i>Georgia</span>
+          <span class="state-ev">16 Electoral Votes</span>
+        </div>
+        <div class="state-body">
+          <p>Georgia flipped in 2020 by fewer than 12,000 votes. The NRA's challenge: turn out rural gun owners in even greater numbers to overcome growing Democratic margins in metro Atlanta. Georgia's permissive gun laws and deep hunting culture provide a strong base.</p>
+          <div class="state-stat"><i class="fas fa-users"></i> ~250,000 estimated NRA members &amp; supporters</div>
+          <div class="state-stat"><i class="fas fa-bullseye"></i> Constitutional carry signed into law 2022</div>
+          <div class="state-strategy">
+            <h5>NRA Strategy</h5>
+            <div class="strategy-tags">
+              <span class="strategy-tag">Exurban Rallies</span>
+              <span class="strategy-tag">Black Gun Owner Outreach</span>
+              <span class="strategy-tag">Rural Registration Drives</span>
+              <span class="strategy-tag">Digital Ad Blitz</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="state-card">
+        <div class="state-header">
+          <span class="state-name"><i class="fas fa-location-dot" style="color: var(--red); margin-right: 8px;"></i>Arizona</span>
+          <span class="state-ev">11 Electoral Votes</span>
+        </div>
+        <div class="state-body">
+          <p>Arizona's libertarian-leaning electorate and strong gun culture make it natural NRA territory, but rapid growth in Phoenix and Tucson from out-of-state migration is shifting demographics. The NRA must energize existing gun owners and convert new residents.</p>
+          <div class="state-stat"><i class="fas fa-users"></i> ~200,000 estimated NRA members &amp; supporters</div>
+          <div class="state-stat"><i class="fas fa-bullseye"></i> Constitutional carry state since 2010</div>
+          <div class="state-strategy">
+            <h5>NRA Strategy</h5>
+            <div class="strategy-tags">
+              <span class="strategy-tag">Border Security + 2A Messaging</span>
+              <span class="strategy-tag">Gun Show Voter Reg</span>
+              <span class="strategy-tag">Latino Gun Owner Outreach</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="state-card">
+        <div class="state-header">
+          <span class="state-name"><i class="fas fa-location-dot" style="color: var(--red); margin-right: 8px;"></i>Michigan</span>
+          <span class="state-ev">15 Electoral Votes</span>
+        </div>
+        <div class="state-body">
+          <p>Michigan's Upper Peninsula and rural Lower Peninsula are packed with hunters and gun owners, but Detroit and college towns anchor a strong Democratic base. Recent Democratic-passed gun control laws (red flag law, universal background checks) have energized NRA opposition.</p>
+          <div class="state-stat"><i class="fas fa-users"></i> ~250,000 estimated NRA members &amp; supporters</div>
+          <div class="state-stat"><i class="fas fa-bullseye"></i> 600,000+ hunting licenses annually</div>
+          <div class="state-strategy">
+            <h5>NRA Strategy</h5>
+            <div class="strategy-tags">
+              <span class="strategy-tag">Repeal Red Flag Campaign</span>
+              <span class="strategy-tag">UP/Rural Canvassing</span>
+              <span class="strategy-tag">Union Sportsmen Alliance</span>
+              <span class="strategy-tag">Women's Self-Defense Events</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="state-card">
+        <div class="state-header">
+          <span class="state-name"><i class="fas fa-location-dot" style="color: var(--red); margin-right: 8px;"></i>North Carolina</span>
+          <span class="state-ev">16 Electoral Votes</span>
+        </div>
+        <div class="state-body">
+          <p>North Carolina is a perennial battleground with a massive military and veteran population, strong rural gun culture, and competitive statewide elections. The NRA's goal: ensure the rural turnout advantage offsets blue gains in Charlotte, Raleigh, and the Research Triangle.</p>
+          <div class="state-stat"><i class="fas fa-users"></i> ~275,000 estimated NRA members &amp; supporters</div>
+          <div class="state-stat"><i class="fas fa-bullseye"></i> Major military bases (Bragg, Lejeune, Cherry Point)</div>
+          <div class="state-strategy">
+            <h5>NRA Strategy</h5>
+            <div class="strategy-tags">
+              <span class="strategy-tag">Veteran-Focused Rallies</span>
+              <span class="strategy-tag">Military Spouse Outreach</span>
+              <span class="strategy-tag">Eastern NC Ground Game</span>
+              <span class="strategy-tag">Freedom Concerts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon"><i class="fas fa-shield-halved"></i></div>
+          National Rifle Association
+        </div>
+        <p>Defending the Second Amendment rights of all law-abiding Americans since 1871. Freedom isn't free&mdash;but it's worth fighting for.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about"><i class="fas fa-chevron-right"></i> About the NRA</a></li>
+          <li><a href="#membership"><i class="fas fa-chevron-right"></i> Membership</a></li>
+          <li><a href="#endorsement"><i class="fas fa-chevron-right"></i> Endorsement</a></li>
+          <li><a href="#advocacy"><i class="fas fa-chevron-right"></i> Advocacy Plan</a></li>
+          <li><a href="#states"><i class="fas fa-chevron-right"></i> Key States</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#"><i class="fas fa-building"></i> NRA Headquarters</a></li>
+          <li><a href="#"><i class="fas fa-map-marker-alt"></i> 11250 Waples Mill Rd, Fairfax, VA 22030</a></li>
+          <li><a href="#"><i class="fas fa-phone"></i> (800) 672-3888</a></li>
+          <li><a href="#"><i class="fas fa-envelope"></i> membership@nrahq.org</a></li>
+          <li><a href="#"><i class="fas fa-globe"></i> www.nra.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        <strong>Paid for by the National Rifle Association Political Victory Fund (NRA-PVF).</strong><br>
+        Not authorized by any candidate or candidate's committee. 11250 Waples Mill Road, Fairfax, Virginia 22030.<br>
+        &copy; 2024 National Rifle Association of America. All rights reserved.<br>
+        <em>This website was created for a government class elections simulation project and is not affiliated with the actual NRA.</em>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════ JAVASCRIPT ════════════════ -->
+<script>
+// ─── Navbar scroll effect ────────────────────────────────────────────────────
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ─── Mobile hamburger ───────────────────────────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('open');
+});
+
+// Close mobile nav on link click
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('open');
+  });
+});
+
+// ─── Active nav link highlighting ────────────────────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navAnchors = navLinks.querySelectorAll('a');
+
+const observerOptions = { rootMargin: '-20% 0px -60% 0px' };
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navAnchors.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
+      });
+    }
+  });
+}, observerOptions);
+
+sections.forEach(section => observer.observe(section));
+
+// ─── Scroll-reveal animation ─────────────────────────────────────────────────
+const revealElements = document.querySelectorAll(
+  '.voter-card, .tier-card, .advocacy-card, .state-card, .benefit-item, .criteria-item, .donation-card, .media-item, .about-grid > *, .endorsement-layout > *, .attract-layout > *'
+);
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+revealElements.forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  revealObserver.observe(el);
+});
+
+// ─── Counter animation for hero stats ────────────────────────────────────────
+function animateCounter(el, target, suffix = '') {
+  const duration = 2000;
+  const start = performance.now();
+  const isDecimal = target % 1 !== 0;
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(eased * target);
+    el.textContent = (current >= 1000000)
+      ? (current / 1000000).toFixed(0) + 'M+'
+      : (current >= 1000)
+        ? current.toLocaleString()
+        : current + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+const statObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const h3s = entry.target.querySelectorAll('.hero-stat h3');
+      const targets = [5000000, 1871, 50, 350];
+      const suffixes = ['+', '', '', 'M+'];
+      h3s.forEach((h3, i) => {
+        const original = h3.textContent;
+        animateCounter(h3, targets[i], suffixes[i]);
+        // Restore original text format after animation
+        setTimeout(() => { h3.textContent = original; }, 2200);
+      });
+      statObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+const heroStats = document.querySelector('.hero-stats');
+if (heroStats) statObserver.observe(heroStats);
+</script>
+
+</body>
+</html>
