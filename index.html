@@ -59,7 +59,7 @@ nav {
   background: rgba(10, 22, 40, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 2px solid var(--gold);
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 nav.scrolled { background: rgba(10, 22, 40, 0.98); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
 
@@ -85,21 +85,21 @@ nav.scrolled { background: rgba(10, 22, 40, 0.98); box-shadow: 0 4px 20px rgba(0
   font-family: var(--font-display); font-size: 0.82rem;
   letter-spacing: 1.5px; text-transform: uppercase;
   color: var(--gray-light); padding: 8px 12px; border-radius: 4px;
-  transition: all 0.25s ease; white-space: nowrap;
+  transition: color 0.25s ease, background 0.25s ease; white-space: nowrap;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--gold); background: rgba(197,165,90,0.1); }
 
 .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
 .hamburger span {
   display: block; width: 26px; height: 2px; background: var(--gold);
-  margin: 6px 0; transition: all 0.3s ease;
+  margin: 6px 0; transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* ═══════════════════════════════════════════════════════════════
    HERO SECTION
    ═══════════════════════════════════════════════════════════════ */
 .hero {
-  position: relative; min-height: 100vh;
+  position: relative; min-height: 100svh; min-height: 100vh;
   display: flex; align-items: center; justify-content: center;
   text-align: center; overflow: hidden;
 }
@@ -123,6 +123,7 @@ nav.scrolled { background: rgba(10, 22, 40, 0.98); box-shadow: 0 4px 20px rgba(0
   font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5.5rem);
   font-weight: 700; line-height: 1.05; color: var(--white);
   text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;
+  text-wrap: balance;
 }
 .hero h1 span { color: var(--gold); display: block; }
 .hero-sub {
@@ -136,7 +137,7 @@ nav.scrolled { background: rgba(10, 22, 40, 0.98); box-shadow: 0 4px 20px rgba(0
   font-family: var(--font-display); font-size: 0.95rem;
   letter-spacing: 2px; text-transform: uppercase;
   padding: 16px 36px; border-radius: 4px; cursor: pointer;
-  transition: all 0.3s ease; border: 2px solid transparent;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; border: 2px solid transparent;
   font-weight: 600;
 }
 .btn-primary { background: var(--red); color: var(--white); border-color: var(--red); }
@@ -170,6 +171,7 @@ section:nth-child(even) { background: var(--navy-light); }
   font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700; color: var(--white); text-transform: uppercase;
   letter-spacing: 1px; line-height: 1.1; margin-bottom: 16px;
+  text-wrap: balance;
 }
 .section-divider {
   width: 60px; height: 3px; background: var(--red);
@@ -225,7 +227,7 @@ section:nth-child(even) { background: var(--navy-light); }
 .voter-card {
   background: var(--navy-mid); border-radius: 8px; padding: 32px;
   border: 1px solid rgba(197,165,90,0.15);
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .voter-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
 .voter-card .card-icon {
@@ -256,7 +258,7 @@ section:nth-child(even) { background: var(--navy-light); }
 .tier-card {
   background: var(--navy-mid); border-radius: 8px; padding: 32px;
   text-align: center; border: 1px solid rgba(197,165,90,0.15);
-  position: relative; overflow: hidden; transition: all 0.3s ease;
+  position: relative; overflow: hidden; transition: border-color 0.3s ease, transform 0.3s ease;
 }
 .tier-card:hover { border-color: var(--gold); transform: translateY(-4px); }
 .tier-card.featured {
@@ -293,7 +295,8 @@ section:nth-child(even) { background: var(--navy-light); }
 }
 .donation-card {
   background: var(--navy); border-radius: 8px; padding: 32px;
-  border-left: 4px solid var(--red);
+  border: 1px solid rgba(197,165,90,0.15);
+  border-top: 3px solid var(--red);
 }
 .donation-card h4 {
   font-family: var(--font-display); font-size: 1.2rem;
@@ -420,7 +423,8 @@ section:nth-child(even) { background: var(--navy-light); }
 
 .media-strategy-text {
   background: var(--navy-mid); border-radius: 8px; padding: 32px;
-  border-left: 4px solid var(--gold);
+  border: 1px solid rgba(197,165,90,0.2);
+  border-top: 3px solid var(--gold);
 }
 .media-strategy-text h4 {
   font-family: var(--font-display); color: var(--white);
@@ -437,7 +441,7 @@ section:nth-child(even) { background: var(--navy-light); }
 .advocacy-card {
   background: var(--navy-mid); border-radius: 8px; padding: 36px;
   border-top: 4px solid var(--red); position: relative;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .advocacy-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
 .advocacy-num {
@@ -519,7 +523,7 @@ section:nth-child(even) { background: var(--navy-light); }
 }
 .state-card {
   background: var(--navy-mid); border-radius: 8px; overflow: hidden;
-  border: 1px solid rgba(197,165,90,0.12); transition: all 0.3s ease;
+  border: 1px solid rgba(197,165,90,0.12); transition: border-color 0.3s ease, transform 0.3s ease;
 }
 .state-card:hover { border-color: var(--gold); transform: translateY(-4px); }
 .state-header {
@@ -625,6 +629,11 @@ footer {
   .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
   .states-grid { grid-template-columns: 1fr; }
   section { padding: 50px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
 }
 </style>
 </head>
